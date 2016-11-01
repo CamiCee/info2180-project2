@@ -356,7 +356,7 @@ window.onload = function()
 								{
 									changeClass(getAll[2]);
 									changeClass(getAll[7]);
-									//changeClass(getAll[3]);
+									changeClass(getAll[3]);
 									getAll[2].addEventListener("click", function()
 									{
 										//this.style.top="100px";
@@ -367,6 +367,76 @@ window.onload = function()
 										//this.style.top="-100px";
 										$(getAll[7]).offset({top:102, left:504});
 									})
+									getAll[3].addEventListener("click", function()
+									{
+										//this.style.top="-100px";
+										$(getAll[3]).offset({top:102, left:504});
+									})
+								}
+								else if(numx==102 && numy==404)
+								{
+									
+									changeClass(getAll[6]);
+									
+									if($(getAll[1]).offset().top==102)
+									{
+										changeClass(getAll[1]);
+									}
+									if($(getAll[3]).offset().top!=102 && $(getAll[3]).offset().left==504)
+									{
+										changeClass(getAll[2]);
+										console.log($(getAll[3]).offset());
+										getAll[2].addEventListener("click", function()
+										{
+											//this.style.top="-100px";
+											$(getAll[2]).offset({top:102, left:404});
+										})
+									}
+									else
+									{
+										changeClass(getAll[2]);
+										changeClass(getAll[3]);
+										getAll[3].addEventListener("click", function()
+										{
+											//this.style.top="-100px";
+											$(getAll[3]).offset({top:102, left:404});
+										})
+										console.log($(getAll[3]).offset());
+										getAll[2].addEventListener("click", function()
+										{
+											//this.style.top="-100px";
+											$(getAll[2]).offset({top:102, left:404});
+										})
+									}
+									getAll[1].addEventListener("click", function()
+									{
+										//this.style.top="-100px";
+										$(getAll[1]).offset({top:102, left:404});
+									})
+									getAll[6].addEventListener("click", function()
+									{
+										//this.style.top="-100px";
+										$(getAll[6]).offset({top:102, left:404});
+									})
+								}
+								else if(numx==102 && numy==304)
+								{
+									changeClass(getAll[0]);
+									changeClass(getAll[1]);
+									
+									if ($(getAll[2]).offset().left == 404)
+									{
+										changeClass(getAll[2]);
+										getAll[2].addEventListener("click", function()
+										{
+											//this.style.top="-100px";
+											$(getAll[2]).offset({top:102, left:304});
+										})
+									}
+									if ($(getAll[5]).offset().top == 202)
+									{
+										changeClass(getAll[5]);
+									}
 								}
 							}
 						}
@@ -384,6 +454,7 @@ window.onload = function()
 		
 	});
 	
+	
 	window.setInterval(function()
 	{
 			for(i=0;i<allPos.length;i++)
@@ -400,13 +471,13 @@ window.onload = function()
 	}
 	
 	//<---Checks the current positions of each puzzle piece--->// 
-	window.setInterval(function()
+	window.setInterval(function()//change
 	{
 		var s="#";
 		for(i=0;i<getAll.length;i++)
 		{
 			s="#"+i;
-			console.log($(s).offset());
+			//console.log($(s).offset());
 			if(ch)
 			{
 				if(original[i].x==$(s).offset().top && original[i].y==$(s).offset().left)
