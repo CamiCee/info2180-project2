@@ -3,6 +3,7 @@ ID:620088143
 Shuffle partially works*/
 window.onload = function()
 {
+	
 	var start=false;
 	var id=document.getElementById("puzzlearea");
 	var getAll=id.getElementsByTagName("div");
